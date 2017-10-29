@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <!--tags -->
+    <title>Haselfre  Solutions Private Limited</title>
+    <!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/main.css" type="text/css"  rel="stylesheet">
+<!--<link rel="stylesheet" type="text/css" href="css/media.css">-->
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+      <script src="js/jquery.min.js"></script>      
+<!--<link href="css/select2.css" rel="stylesheet">-->
+  </head>
+  <body id="kid-game-dashboard">
+
+<div class="game-header">
+    <div class="row">
+        <audio class="page_load" preload="auto"> 
+            <source src="audio/Tina_Welcome_Message-Tina_Speaking.mp3">
+        </audio>
+        
+        <audio class="volume-control" preload="auto"> 
+            <source src="audio/Tina_Welcome_Message-Tina_Speaking.mp3">
+        </audio>
+        
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <a href="#">        
+            <img src="images/logo.jpg">
+        </a>    
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
+    
+        <div class="audio-div">
+        <ul class="audio-setting">
+                        <li class="img-shadow"><a href="#" ><img src="images/volume-active-icon.png" id="header-audio-btn"></a></li>
+                        <li class="img-shadow"><a href="#"><img src="images/close-icon.png" id="exit-btn"></a></li>
+        </ul>
+        </div>
+            <audio id="header-play"  preload="auto">
+                <source src="audio/Tina_welcome_message.mp3">
+            </audio>
+     </div>
+        <audio id="exit-ply"  preload="auto">
+                <source src="audio/Exit.mp3">
+        </audio>
+        <audio id="close-btn"  preload="auto">
+                <source src="audio/Ill-see_you-soon-Goodbye.mp3">
+        </audio>
+  </div>        
+</div>
+     
+
+<section class="game-dashboad-bg game-dashboard-block" >
+<div class="container">
+<div class="row game-block">
+<div class="col-sm-4">
+<div class="tina clearfix">
+			<img src="images/tina.png" alt="Tina" >
+		</div> 
+</div>
+
+<div class="col-sm-8">
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+<div class="gamelisting clearfix">
+<div class="game-img-holder clearfix"><img src="images/game1.jpg" class="tumb-title"/></div>
+<div class="game-title clearfix"><span>My Body</span></div>
+<div class="game-ply-btn clearfix">   
+    <a href="game1.html"><img src="images/play-btn.png" class="ply-btn"></a>
+</div>
+<audio id="ply-audio"  preload="auto">
+    <source src="audio/play.mp3">
+</audio> 
+</div>
+</div>
+
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+<div class="gamelisting clearfix">
+<div class="game-img-holder clearfix"><img src="images/game2.jpg"  class="tumb-title"/></div>
+<div class="game-title clearfix"><span>Alphabet: Big Case G</span></div>
+<audio id="tumbe-message"  preload="auto">
+    <source src="audio/indro_message.mp3">
+</audio>    
+<div class="game-ply-btn clearfix"><a href="#"><img src="images/play-btn.png" class="ply-btn"/></a>
+</div>
+</div>
+</div>
+
+
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+<div class="gamelisting clearfix">
+<div class="game-img-holder clearfix"><img src="images/game3.jpg" class="tumb-title"/></div>
+<div class="game-title clearfix"><span>Dinosaur</span>Dinosaur</div>
+<div class="game-ply-btn clearfix"><a href="#"><img src="images/play-btn.png" class="ply-btn"/></a></div>
+</div>
+</div>
+
+
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+<div class="gamelisting clearfix">
+<div class="game-img-holder clearfix"><img src="images/game4.jpg" class="tumb-title"/></div>
+<div class="game-title clearfix"><span>Greetings</span></div>
+    
+<div class="game-ply-btn clearfix"><a href="#"><img src="images/play-btn.png" class="ply-btn"/></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body>
+  <script>
+        var game_play = $("#ply-audio")[0];
+        $(".ply-btn").mouseenter(function() {game_play.play();});
+        $(".ply-btn").mouseleave(function() {game_play.pause();});
+            
+        var volum_set=$(".volume-control")[0];
+        $("#header-audio-btn").click(function(){volum_set.play();});
+        
+        var  head_audio= $("#header-play")[0];
+        $("#header-audio-btn").mouseenter(function(){head_audio.play();});
+        /*$("#header-audio-btn").mouseleave(function(){head_audio.pause();});
+        $("#header-audio-btn").click(function(){head_audio.stop});*/
+        $('#header-audio-btn').on('click mouseleave', function () {head_audio.pause();});
+
+        
+        var tumbe_message=$("#tumbe-message")[0];
+        $(".tumb-title").mouseenter(function(){tumbe_message.play();});
+        $(".tumb-title").mouseleave(function(){tumbe_message.pause();});
+        
+        var exit_message=$("#exit-ply")[0];
+        $("#exit-btn").mouseenter(function(){exit_message.play();});
+        $('#exit-btn').on('click mouseleave', function () {exit_message.pause();});
+       /* $("#exit-btn").mouseleave(function(){exit_message.pause();});*/
+      
+        var colse_set=$("#close-btn")[0];
+        $("#exit-btn").click(function(){colse_set.play();});
+      
+        var page_onload = $(".page_load")[0];
+        $(window).load(function(){page_onload.play();});
+        
+       
+      
+   </script>
+    
+</html>

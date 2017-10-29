@@ -1,0 +1,46 @@
+
+<html>
+    <head>
+    <style>
+        #shutdown{padding: 10px;background: red;width: 100px;}
+    </style>    
+   <script src="js/jquery.min.js"></script>
+<script> 
+function myFunction() {
+    var d = new Date();
+    var weekday = new Array(7);
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+ var n = weekday[d.getDay()];
+ if(n=="Sunday"){
+     $("#bg-color").css("background","yellow");
+ }else if(n=="Monday"){
+     
+     $("#bg-color").css("background","green");
+ }
+else if(n=="Tuesday"){
+     
+     $("#bg-color").css("background","pink");
+ }
+else if(n=="Wednesday"){
+     
+     $("#bg-color").css("background","pink");
+ } 
+ else if(n=="Friday"){
+     $("#bg-color").css("background","pink");
+ }
+ else if(n=="Saturday"){
+     $("#bg-color").css("background","pink");
+ } 
+}
+</script>     
+</head>
+<body id="bg-color" onload="myFunction()">    
+<div id="shutdown">Shutdown Engaged</div>
+</body>
+</html>
